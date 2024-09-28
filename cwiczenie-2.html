@@ -17,13 +17,38 @@
 	<input type="submit" value="Sprawdź udział" onclick="sprawdz()">
 
 	<div id="wynik"></div>
+	<div id="cena"></div>
 	
 	<script>
 	
-		function sprawdz()
-		{
-			
-			
+		function sprawdz() {
+			const wynik = document.getElementById("wynik");
+			const cena = document.getElementById("cena");
+			const wiek = parseInt(document.getElementById("wiek").value);
+			const imie = document.getElementById("imie").value;
+
+			if (wiek < 16) {
+    			wynik.innerHTML = "Nie możesz wziąć udziału w seansie";
+				cena.innerHTML = "";
+			} else if (wiek == 16 || wiek == 17) {
+    			wynik.innerHTML = "Możesz wziąć udział, jeśli jesteś z opiekunem";
+    			cena.innerHTML = "Cena biletu: 12 zł";
+			} else if (wiek >= 18) {
+    			wynik.innerHTML = "Możesz wziąć udział w seansie";
+    			cena.innerHTML = "Cena biletu: 18 zł";
+			} else {
+    			wynik.innerHTML = "Niepoprawne dane";
+				cena.innerHTML = "";
+			}
+
+			if (imie == "Brad" || imie == "Morgan") {
+				if (wiek < 16 || wiek.isNaN()) {
+					cena.innerHTML = "";
+				} else {
+					cena.innerHTML = cena.innerHTML.slice(0, 13);
+					cena.innerHTML += "za darmo!"
+				}
+			}
 		}
 
 	</script>
