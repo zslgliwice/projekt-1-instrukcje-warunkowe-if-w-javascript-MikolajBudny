@@ -21,13 +21,65 @@
 	
 	<script>
 	
-		function matematyka()
-		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
+		function matematyka() {
+			const a = parseInt(document.getElementById('a').value);
+			const b = parseInt(document.getElementById('b').value);
+			const c = parseInt(document.getElementById('c').value);
+			const wynik = document.getElementById("wynik");
+			wynik.innerHTML = "";
+
+			if (a < b && a < c) {
+				wynik.innerHTML += "<p> Najmniejsza liczba: " + a + "</p>";
+			}
+
+			if (b < a && b < c) {
+				wynik.innerHTML += "<p> Najmniejsza liczba: " + b + "</p>";
+			}
+
+			if (c < a && c < b) {
+				wynik.innerHTML += "<p> Najmniejsza liczba: " + c + "</p>";
+			}
 			
+			if (a > b && a > c) {
+				wynik.innerHTML += "<p> Największa liczba: " + a + "</p>";
+			}
+
+			if (b > a && b > c) {
+				wynik.innerHTML += "<p> Największa liczba: " + b + "</p>";
+			}
+
+			if (c > a && c > b) {
+				wynik.innerHTML += "<p> Największa liczba: " + c + "</p>";
+			}
+
+			wynik.innerHTML += "Wartość bezwzględna liczb:";
 			
+			if (a < 0) {
+				wynik.innerHTML += " a = " + -a + ",";
+			} else wynik.innerHTML += " a = " + a + ",";
+
+			if (b < 0) {
+				wynik.innerHTML += " b = " + -b + ",";
+			} else wynik.innerHTML += " b = " + b + ",";
+
+			if (c < 0) {
+				wynik.innerHTML += " c = " + -c;
+			} else wynik.innerHTML += " c = " + c;
+
+			wynik.innerHTML += "<p></p>"
+			wynik.innerHTML += "Czy liczba jest parzysta:";
+
+			if (a % 2 == 0) {
+				wynik.innerHTML += " a: tak";
+			} else wynik.innerHTML += " a: nie";
+
+			if (b % 2 == 0) {
+				wynik.innerHTML += " b: tak";
+			} else wynik.innerHTML += " b: nie";
+
+			if (c % 2 == 0) {
+				wynik.innerHTML += " c: tak";
+			} else wynik.innerHTML += " c: nie";
 		}
 
 	</script>

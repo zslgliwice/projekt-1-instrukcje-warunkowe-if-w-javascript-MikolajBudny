@@ -19,10 +19,28 @@
 	
 	<script>
 	
-		function ktora_cwiartka()
-		{
+		function ktora_cwiartka() {
+			const x = parseInt(document.getElementById("x").value);
+			const y = parseInt(document.getElementById("y").value);
+			const wynik = document.getElementById("wynik");
 			
-			
+			if (x == 0 && y == 0) {
+				wynik.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+			} else if (x == 0 && y != 0 || x != 0 && y == 0) {
+				wynik.innerHTML = "Punkt leży na jednej z osi układu";
+			} else if (x == 15 && y == 96) {
+				wynik.innerHTML = 'René Descartes (1596–1650), znany jako Kartezjusz, był francuskim filozofem, matematykiem i fizykiem. Uważany za ojca nowożytnej filozofii, zasłynął z zasady "Cogito, ergo sum" ("Myślę, więc jestem"). Stworzył geometrię analityczną, łączącą algebrę z geometrią. Jego najważniejsze dzieło to Medytacje o pierwszej filozofii. Zmarł w Sztokholmie, gdzie nauczał filozofii na dworze królowej Krystyny.';
+			} else if (x > 0 && y > 0) {
+				wynik.innerHTML = "I ćwiartka";
+			} else if (x < 0 && y > 0) {
+				wynik.innerHTML = "II ćwiartka";
+			} else if (x < 0 && y < 0) {
+				wynik.innerHTML = "III ćwiartka";
+			} else if (x > 0 && y < 0) {
+				wynik.innerHTML = "IV ćwiartka";
+			} else if (isNaN(x) || isNaN(y)) {
+				wynik.innerHTML = "Niepoprawne dane";
+			}
 		}
 
 	</script>
