@@ -18,11 +18,19 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
-		function teleturniej()
-		{
+		
+		function teleturniej() {
+			const wynik = document.getElementById("wynik");
+			const wybrana = parseInt(document.getElementById("bramka").value);
+			
 			var lucky = Math.floor(Math.random() * 3) + 1;
 			
+			wynik.innerHTML = (lucky == 1 && wybrana == 1) ? "Hurra! W bramce nr 1 jest samochód!" :
+							  (lucky == 1 && wybrana != 1) ? "Niestety! Samochód znajdował się w bramce nr 1..." :
+							  (lucky == 2 && wybrana == 2) ? "Hurra! W bramce nr 2 jest samochód!" :
+							  (lucky == 2 && wybrana != 2) ? "Niestety! Samochód znajdował się w bramce nr 2..." :
+							  (lucky == 3 && wybrana == 3) ? "Hurra! W bramce nr 3 jest samochód!" :
+							"Niestety! Samochód znajdował się w bramce nr 3...";
 		}
 
 	</script>
